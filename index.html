@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Pharmacy - Homepage Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-navy: #002F52;
+            --color-navy-light: #003d6b;
+            --color-green: #3bcfbb;
+            --color-green-dark: #2eb3a1;
+            --color-white: #ffffff;
+            --color-off-white: #f7f8fa;
+            --color-salmon: #fdf1ee;
+            --color-text: #002F52;
+            --color-text-muted: #002F52;
+            --color-border: #e5e7eb;
+            --font-heading: 'Work Sans', sans-serif;
+            --font-body: 'Work Sans', sans-serif;
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --weight-regular: 400;
+            --weight-medium: 500;
+            --weight-semibold: 600;
+            --weight-bold: 700;
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+            --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
+            --transition: 0.2s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-text);
+            background: var(--color-white);
+            line-height: 1.6;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        ul, ol { list-style: none; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 80px;
+        }
+
+        @media (max-width: 1200px) { .container { padding: 0 40px; } }
+        @media (max-width: 768px) { .container { padding: 0 20px; } }
+
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: var(--weight-bold); line-height: 1.2; }
+        h1 { font-size: clamp(2.25rem, 4vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); }
+        p { line-height: 1.7; color: var(--color-navy); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            font-weight: var(--weight-semibold);
+            transition: background var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary { background: var(--color-green); color: var(--color-white); }
+        .btn-primary:hover { background: var(--color-green-dark); }
+        .btn-white { background: var(--color-white); color: var(--color-navy); border-color: var(--color-white); }
+        .btn-white:hover { background: rgba(255,255,255,.88); }
+        .btn-lg { padding: 18px 36px; font-size: var(--text-lg); }
+
+        .section { padding: var(--space-24) 0; }
+
+        .cta-banner {
+            background: #ffe1d1;
+            color: var(--color-navy);
+            padding: var(--space-20) 0;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+            font-weight: 550;
+            color: var(--color-navy);
+            margin-bottom: var(--space-4);
+        }
+
+        .cta-banner p {
+            font-size: var(--text-lg);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-8);
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-banner-actions {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-8);
+        }
+
+        .cta-banner-actions .btn { border-radius: var(--radius-full); }
+
+        .cta-trustpilot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+
+        .cta-trustpilot .tp-stars { color: #3bcfbb; font-size: 1.1rem; }
+
+        @media (max-width: 768px) {
+            .cta-banner h2 { text-align: center; }
+            .cta-banner p { text-align: center; }
+            .cta-banner-actions { flex-direction: column; gap: var(--space-4); }
+            .cta-banner-actions .btn { width: 100%; }
+        }
+
+        .hero {
+            background: radial-gradient(ellipse 55% 70% at 68% 42%, #1e4f82 0%, transparent 75%),
+                        radial-gradient(ellipse 35% 45% at 20% 70%, #163558 0%, transparent 65%),
+                        #0d1f38;
+            color: var(--color-white);
+            padding: 4.2rem 0;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            align-items: center;
+        }
+
+        .hero-content { display: flex; flex-direction: column; gap: var(--space-6); }
+
+        .hero-content h1 {
+            font-size: clamp(2.375rem, 4vw, 3.375rem);
+            font-weight: var(--weight-medium);
+            line-height: 1.15;
+            color: var(--color-white);
+        }
+
+        .hero-content p {
+            font-size: var(--text-lg);
+            color: rgba(255,255,255,.8);
+            line-height: 1.7;
+        }
+
+        .hero-cta-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: var(--space-4);
+            row-gap: var(--space-6);
+            margin-top: var(--space-2);
+        }
+
+        @media (max-width: 640px) {
+            .hero-cta-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1>Your Trusted Online Pharmacy</h1>
+                    <p>Fast, reliable, and convenient prescription delivery services across the UK. GPhC registered pharmacy with over 4.5 stars on Trustpilot.</p>
+                    <div class="hero-cta-grid">
+                        <a href="#" class="btn btn-primary btn-lg">Check Stock</a>
+                        <a href="#" class="btn btn-white btn-lg">Send Prescription</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Clear processes. Reliable delivery.</h2>
+            <p>Join thousands of UK patients and prescribers who trust Signature Pharmacy</p>
+            <div class="cta-banner-actions">
+                <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+                <a href="#" class="btn btn-white btn-lg">Contact Signature Pharmacy</a>
+            </div>
+            <div class="cta-trustpilot">
+                <span>Excellent</span>
+                <span class="tp-stars">★★★★★</span>
+                <strong>Trustpilot</strong>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--color-navy); color: rgba(255,255,255,.8); padding: var(--space-20) 0 var(--space-6); text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Signature Pharmacy. GPhC Registered. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
