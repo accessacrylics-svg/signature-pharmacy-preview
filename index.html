@@ -3,84 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signature Pharmacy - Homepage Preview</title>
+    <title>Signature Pharmacy - Online Prescription Delivery Service</title>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-navy: #002F52;
-            --color-navy-light: #003d6b;
             --color-green: #3bcfbb;
-            --color-green-dark: #2eb3a1;
             --color-white: #ffffff;
             --color-off-white: #f7f8fa;
-            --color-salmon: #fdf1ee;
             --color-text: #002F52;
             --color-text-muted: #002F52;
             --color-border: #e5e7eb;
             --font-heading: 'Work Sans', sans-serif;
             --font-body: 'Work Sans', sans-serif;
-            --text-xs: 0.75rem;
             --text-sm: 0.875rem;
             --text-base: 1rem;
             --text-lg: 1.125rem;
             --text-xl: 1.25rem;
             --text-2xl: 1.5rem;
-            --text-3xl: 1.875rem;
-            --text-4xl: 2.25rem;
-            --weight-regular: 400;
             --weight-medium: 500;
             --weight-semibold: 600;
             --weight-bold: 700;
-            --space-1: 0.25rem;
             --space-2: 0.5rem;
             --space-3: 0.75rem;
             --space-4: 1rem;
-            --space-5: 1.25rem;
             --space-6: 1.5rem;
             --space-8: 2rem;
             --space-12: 3rem;
             --space-16: 4rem;
             --space-20: 5rem;
             --space-24: 6rem;
-            --radius-sm: 4px;
-            --radius-md: 8px;
             --radius-lg: 16px;
-            --radius-xl: 24px;
             --radius-full: 9999px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
             --shadow-md: 0 4px 16px rgba(0,0,0,.10);
-            --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
             --transition: 0.2s ease;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: var(--font-body);
-            font-size: var(--text-base);
-            color: var(--color-text);
-            background: var(--color-white);
-            line-height: 1.6;
-        }
-
-        img { max-width: 100%; height: auto; display: block; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background: var(--color-white); line-height: 1.6; }
+        img, svg { max-width: 100%; height: auto; display: block; }
         a { color: inherit; text-decoration: none; }
         ul, ol { list-style: none; }
         button { cursor: pointer; border: none; background: none; font-family: inherit; }
+        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--weight-bold); line-height: 1.2; }
+        h1 { font-size: clamp(2.25rem, 4vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 550; }
+        p { line-height: 1.7; }
 
-        .container {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 80px;
-        }
-
+        .container { max-width: 1440px; margin: 0 auto; padding: 0 80px; }
         @media (max-width: 1200px) { .container { padding: 0 40px; } }
         @media (max-width: 768px) { .container { padding: 0 20px; } }
-
-        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: var(--weight-bold); line-height: 1.2; }
-        h1 { font-size: clamp(2.25rem, 4vw, 3.5rem); }
-        h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); }
-        p { line-height: 1.7; color: var(--color-navy); }
 
         .btn {
             display: inline-flex;
@@ -88,153 +61,358 @@
             justify-content: center;
             gap: var(--space-2);
             padding: 14px 28px;
-            border-radius: var(--radius-sm);
-            font-family: var(--font-body);
+            border-radius: var(--radius-lg);
             font-size: var(--text-base);
             font-weight: var(--weight-semibold);
             transition: background var(--transition);
             cursor: pointer;
             border: 2px solid transparent;
+            text-decoration: none;
         }
 
         .btn-primary { background: var(--color-green); color: var(--color-white); }
-        .btn-primary:hover { background: var(--color-green-dark); }
-        .btn-white { background: var(--color-white); color: var(--color-navy); border-color: var(--color-white); }
+        .btn-primary:hover { background: #2eb3a1; }
+        .btn-white { background: var(--color-white); color: var(--color-navy); }
         .btn-white:hover { background: rgba(255,255,255,.88); }
-        .btn-lg { padding: 18px 36px; font-size: var(--text-lg); }
+        .btn-lg { padding: 18px 36px; font-size: var(--text-lg); border-radius: var(--radius-full); }
 
         .section { padding: var(--space-24) 0; }
+        .section-header { text-align: center; margin-bottom: var(--space-16); }
+        .section-header h2 { margin-bottom: var(--space-4); }
 
-        .cta-banner {
-            background: #ffe1d1;
-            color: var(--color-navy);
-            padding: var(--space-20) 0;
-            text-align: center;
-        }
-
-        .cta-banner h2 {
-            font-size: clamp(2.5rem, 4.5vw, 3.75rem);
-            font-weight: 550;
-            color: var(--color-navy);
-            margin-bottom: var(--space-4);
-        }
-
-        .cta-banner p {
-            font-size: var(--text-lg);
-            color: var(--color-text-muted);
-            margin-bottom: var(--space-8);
-            max-width: 560px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-
-        .cta-banner-actions {
-            display: flex;
-            gap: var(--space-4);
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: var(--space-8);
-        }
-
-        .cta-banner-actions .btn { border-radius: var(--radius-full); }
-
-        .cta-trustpilot {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-3);
-            font-size: var(--text-sm);
-            color: var(--color-text-muted);
-        }
-
-        .cta-trustpilot .tp-stars { color: #3bcfbb; font-size: 1.1rem; }
-
-        @media (max-width: 768px) {
-            .cta-banner h2 { text-align: center; }
-            .cta-banner p { text-align: center; }
-            .cta-banner-actions { flex-direction: column; gap: var(--space-4); }
-            .cta-banner-actions .btn { width: 100%; }
-        }
-
+        /* Hero */
+        body { background: #0d1f38; }
         .hero {
-            background: radial-gradient(ellipse 55% 70% at 68% 42%, #1e4f82 0%, transparent 75%),
-                        radial-gradient(ellipse 35% 45% at 20% 70%, #163558 0%, transparent 65%),
-                        #0d1f38;
+            background: radial-gradient(ellipse 55% 70% at 68% 42%, #1e4f82 0%, transparent 75%), radial-gradient(ellipse 35% 45% at 20% 70%, #163558 0%, transparent 65%), #0d1f38;
             color: var(--color-white);
             padding: 4.2rem 0;
         }
-
-        .hero-inner {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-8);
-            align-items: center;
-        }
-
         .hero-content { display: flex; flex-direction: column; gap: var(--space-6); }
+        .hero-content h1 { color: var(--color-white); }
+        .hero-content p { color: rgba(255,255,255,.8); }
+        .hero-cta-grid { display: grid; grid-template-columns: auto auto; gap: var(--space-4); margin-top: var(--space-2); }
+        @media (max-width: 640px) { .hero-cta-grid { grid-template-columns: 1fr; } }
 
-        .hero-content h1 {
-            font-size: clamp(2.375rem, 4vw, 3.375rem);
-            font-weight: var(--weight-medium);
-            line-height: 1.15;
-            color: var(--color-white);
-        }
+        .trust-bar { background: #ebfaf8; padding: var(--space-4) 0 var(--space-8); }
+        .trust-bar-inner { display: flex; align-items: center; justify-content: center; gap: 144px; flex-wrap: wrap; }
+        .trust-bar-item { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--color-navy); font-weight: var(--weight-medium); }
 
-        .hero-content p {
-            font-size: var(--text-lg);
-            color: rgba(255,255,255,.8);
-            line-height: 1.7;
-        }
+        /* Services */
+        .services { padding-block: var(--space-20); background: var(--color-white); }
+        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-top: var(--space-12); }
+        .service-card { background: #ebfaf8; border-radius: var(--radius-lg); padding: var(--space-12) 12px; transition: transform var(--transition); }
+        .service-card:nth-child(2) { background: #ffe9dd; }
+        .service-card:nth-child(3) { background: #fff9e4; }
+        .service-card:nth-child(4) { background: #ffdce1; }
+        .service-card:hover { transform: translateY(-3px); }
+        .service-card h3 { font-size: var(--text-xl); color: var(--color-navy); margin-bottom: var(--space-3); }
+        .service-card p { font-size: var(--text-sm); color: var(--color-text-muted); }
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
 
-        .hero-cta-grid {
-            display: grid;
-            grid-template-columns: auto auto;
-            column-gap: var(--space-4);
-            row-gap: var(--space-6);
-            margin-top: var(--space-2);
-        }
+        /* Process */
+        .process { background: #f9fafb; padding-block: var(--space-20); }
+        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-12); }
+        .process-card { border-radius: var(--radius-lg); overflow: hidden; }
+        .process-card:nth-child(1) { background: #FFE5E8; }
+        .process-card:nth-child(2) { background: #FDE8DC; }
+        .process-card:nth-child(3) { background: #FFF8E1; }
+        .process-card-body { padding: var(--space-8) var(--space-6); }
+        .process-card h3 { font-size: var(--text-xl); color: var(--color-navy); margin-bottom: var(--space-3); }
+        .process-card p { font-size: var(--text-sm); color: var(--color-text-muted); }
+        @media (max-width: 1024px) { .process-grid { grid-template-columns: 1fr; } }
 
-        @media (max-width: 640px) {
-            .hero-cta-grid { grid-template-columns: 1fr 1fr; }
-        }
+        /* Delivery Benefits */
+        .delivery-benefits { padding-block: var(--space-20); background: var(--color-white); }
+        .delivery-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; }
+        .benefits-content h2 { color: var(--color-navy); margin-bottom: var(--space-4); }
+        .benefits-list { list-style: none; display: flex; flex-direction: column; margin-bottom: var(--space-8); }
+        .benefits-list li { display: flex; align-items: center; gap: var(--space-4); font-size: var(--text-base); color: var(--color-text); padding-block: var(--space-4); border-bottom: 1px solid var(--color-border); }
+        .benefits-list li:first-child { border-top: 1px solid var(--color-border); }
+        @media (max-width: 1024px) { .delivery-inner { grid-template-columns: 1fr; } }
+
+        /* Support */
+        .support-section { background: #ffe8dd; padding-block: var(--space-20); }
+        .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-12); }
+        .support-card { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-8); }
+        .support-card h3 { font-size: var(--text-2xl); color: var(--color-navy); margin-bottom: var(--space-6); }
+        .support-card p { font-size: var(--text-lg); color: var(--color-text-muted); }
+        @media (max-width: 1024px) { .support-grid { grid-template-columns: 1fr; } }
+
+        /* Trust Assurance */
+        .trust-assurance { padding-block: var(--space-20); background: #f9fafb; }
+        .trust-assurance-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; }
+        .trust-assurance-content h2 { color: var(--color-navy); margin-bottom: var(--space-8); }
+        .pharmacist-card { background: var(--color-white); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-md); }
+        .pharmacist-info { flex: 1; }
+        .pharmacist-name { font-size: var(--text-lg); font-weight: var(--weight-semibold); color: var(--color-navy); }
+        .pharmacist-role { font-size: var(--text-base); color: var(--color-text-muted); }
+        @media (max-width: 1024px) { .trust-assurance-inner { grid-template-columns: 1fr; } }
+
+        /* Reviews */
+        .reviews-section { background: #fffde8; padding-block: var(--space-20); }
+        .reviews-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-6); }
+        .reviews-header h2 { color: var(--color-navy); }
+        .reviews-grid { display: flex; gap: var(--space-4); overflow-x: auto; padding-bottom: var(--space-2); }
+        .review-card { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); flex: 0 0 calc(100% / 4 - var(--space-3)); min-width: 280px; }
+        .review-card p { font-size: var(--text-sm); color: var(--color-text); margin-bottom: var(--space-4); }
+        .reviewer-name { font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--color-navy); }
+        .review-stars { color: #3bcfbb; }
+
+        /* FAQ */
+        .faq-section { background: var(--color-off-white); padding-block: var(--space-20); }
+        .faq-inner { display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-16); }
+        .faq-intro h2 { color: var(--color-navy); margin-bottom: var(--space-8); }
+        .faq-help-card { background: #e3f0f8; border-radius: var(--radius-lg); padding: var(--space-6); margin-top: var(--space-12); }
+        .faq-help-card h4 { color: var(--color-navy); margin-bottom: var(--space-2); }
+        .faq-help-card p { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); }
+        .faq-list { display: flex; flex-direction: column; }
+        .faq-item { border-bottom: 1px solid var(--color-border); }
+        .faq-item:first-child { border-top: 1px solid var(--color-border); }
+        .faq-question { display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) 0; cursor: pointer; font-size: var(--text-xl); font-weight: var(--weight-medium); color: var(--color-navy); background: none; border: none; width: 100%; text-align: left; }
+        .faq-answer { padding-bottom: var(--space-4); font-size: var(--text-base); color: var(--color-text-muted); }
+        @media (max-width: 768px) { .faq-inner { grid-template-columns: 1fr; } }
+
+        /* CTA Banner */
+        .cta-banner { background: #ffe1d1; color: var(--color-navy); padding: var(--space-20) 0; text-align: center; }
+        .cta-banner h2 { font-size: clamp(2.5rem, 4.5vw, 3.75rem); font-weight: 550; color: var(--color-navy); margin-bottom: var(--space-4); }
+        .cta-banner p { font-size: var(--text-lg); color: var(--color-text-muted); margin-bottom: var(--space-8); max-width: 560px; margin-left: auto; margin-right: auto; }
+        .cta-banner-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-bottom: var(--space-8); }
+        @media (max-width: 768px) { .cta-banner-actions { flex-direction: column; } .cta-banner-actions .btn { width: 100%; } }
+
+        /* Footer */
+        .site-footer { background: var(--color-navy); color: rgba(255,255,255,.8); padding: var(--space-20) 0 var(--space-6); }
+        .footer-content { text-align: center; }
     </style>
 </head>
 <body>
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="hero-inner">
-                <div class="hero-content">
-                    <h1>Your Trusted Online Pharmacy</h1>
-                    <p>Fast, reliable, and convenient prescription delivery services across the UK. GPhC registered pharmacy with over 4.5 stars on Trustpilot.</p>
-                    <div class="hero-cta-grid">
-                        <a href="#" class="btn btn-primary btn-lg">Check Stock</a>
-                        <a href="#" class="btn btn-white btn-lg">Send Prescription</a>
+            <div class="hero-content">
+                <h1>Online Pharmacy Offering NHS & private prescription delivery</h1>
+                <p>Signature Pharmacy provides secure, speedy medication dispensing and pharmacy delivery services, on behalf of private and NHS clinics across the UK. Whether you're a prescriber or a patient, we make ordering prescriptions online easy.</p>
+                <div class="hero-cta-grid">
+                    <a href="#" class="btn btn-primary btn-lg">Order private prescriptions</a>
+                    <a href="#" class="btn btn-white btn-lg">Order NHS prescriptions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-bar-inner">
+                <div class="trust-bar-item">✓ No queueing at the chemist</div>
+                <div class="trust-bar-item">✓ Competitive medication prices</div>
+                <div class="trust-bar-item">✓ Delivery seven days a week</div>
+                <div class="trust-bar-item">✓ GPhC registered pharmacy</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>NHS Prescriptions</h3>
+                    <p>Fast and free NHS prescription delivery across the UK</p>
+                </div>
+                <div class="service-card">
+                    <h3>Private Prescriptions</h3>
+                    <p>Competitive prices for private prescriptions online</p>
+                </div>
+                <div class="service-card">
+                    <h3>Clinic Delivery</h3>
+                    <p>Pharmacy delivery service for private clinics</p>
+                </div>
+                <div class="service-card">
+                    <h3>Pet Health</h3>
+                    <p>Medication delivery for veterinary prescriptions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Process</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-card-body">
+                        <h3>1. Receive</h3>
+                        <p>Send your prescription to us via email or post</p>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-body">
+                        <h3>2. Clinical Check</h3>
+                        <p>Our pharmacists review your prescription</p>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <div class="process-card-body">
+                        <h3>3. Deliver</h3>
+                        <p>We deliver your medication within 2-3 days</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Delivery Benefits -->
+    <section class="delivery-benefits section">
+        <div class="container">
+            <div class="delivery-inner">
+                <div class="benefits-content">
+                    <h2>Why Choose Signature Pharmacy?</h2>
+                    <ul class="benefits-list">
+                        <li>✓ GPhC Registered Pharmacy</li>
+                        <li>✓ Competitive Prices</li>
+                        <li>✓ Free Delivery on NHS</li>
+                        <li>✓ 7-Day Delivery Service</li>
+                    </ul>
+                </div>
+                <div class="delivery-image">
+                    <p>[Delivery Person Image]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support -->
+    <section class="support-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Support Services</h2>
+            </div>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>Stock Checker</h3>
+                    <p>Check medication availability instantly</p>
+                </div>
+                <div class="support-card">
+                    <h3>WeightCare App</h3>
+                    <p>Manage your weight loss prescriptions online</p>
+                </div>
+                <div class="support-card">
+                    <h3>Signature Rx</h3>
+                    <p>Private prescriber platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Assurance -->
+    <section class="trust-assurance section">
+        <div class="container">
+            <div class="trust-assurance-inner">
+                <div class="trust-assurance-content">
+                    <h2>Trust & Assurance</h2>
+                    <p>We are a GPhC registered pharmacy with over 3,310+ excellent reviews on Trustpilot. Our team of experienced pharmacists ensures every prescription is handled with care.</p>
+                </div>
+                <div class="pharmacist-card">
+                    <div class="pharmacist-info">
+                        <div class="pharmacist-name">Superintendent Pharmacist</div>
+                        <div class="pharmacist-role">GPhC Registration #9876543</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews-section section">
+        <div class="container">
+            <div class="reviews-header">
+                <h2>Customer Reviews</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p>"Excellent service. Very professional and quick delivery."</p>
+                    <div class="reviewer-name">Sarah M.</div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <div class="review-card">
+                    <p>"Best online pharmacy I've used. Highly recommended."</p>
+                    <div class="reviewer-name">John D.</div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <div class="review-card">
+                    <p>"Fast delivery and great customer service."</p>
+                    <div class="reviewer-name">Emma W.</div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <div class="review-card">
+                    <p>"Reliable and professional. Always my first choice."</p>
+                    <div class="reviewer-name">Michael T.</div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section section">
+        <div class="container">
+            <div class="faq-inner">
+                <div class="faq-intro">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">How long does delivery take? <span>+</span></button>
+                        <div class="faq-answer">Delivery typically takes 2-3 business days for NHS prescriptions and 1-2 days for private prescriptions.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Is delivery free? <span>+</span></button>
+                        <div class="faq-answer">Delivery is free for all NHS prescriptions. Private prescriptions may have a small delivery charge.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Are you regulated? <span>+</span></button>
+                        <div class="faq-answer">Yes, we are a fully GPhC registered pharmacy with a team of qualified pharmacists.</div>
+                    </div>
+                </div>
+                <div class="faq-help-card">
+                    <h4>Still have questions?</h4>
+                    <p>Contact our support team for more information</p>
+                    <a href="#" class="btn btn-primary">Get Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
     <section class="cta-banner">
         <div class="container">
             <h2>Clear processes. Reliable delivery.</h2>
             <p>Join thousands of UK patients and prescribers who trust Signature Pharmacy</p>
             <div class="cta-banner-actions">
                 <a href="#" class="btn btn-primary btn-lg">Get Started</a>
-                <a href="#" class="btn btn-white btn-lg">Contact Signature Pharmacy</a>
+                <a href="#" class="btn btn-white btn-lg">Contact Us</a>
             </div>
-            <div class="cta-trustpilot">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 12px; font-size: var(--text-sm); color: var(--color-text-muted);">
                 <span>Excellent</span>
-                <span class="tp-stars">★★★★★</span>
+                <span style="color: #3bcfbb;">★★★★★</span>
                 <strong>Trustpilot</strong>
             </div>
         </div>
     </section>
 
-    <footer style="background: var(--color-navy); color: rgba(255,255,255,.8); padding: var(--space-20) 0 var(--space-6); text-align: center;">
+    <!-- Footer -->
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Signature Pharmacy. GPhC Registered. All rights reserved.</p>
+            <div class="footer-content">
+                <p>&copy; 2026 Signature Pharmacy. GPhC Registered Pharmacy. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
